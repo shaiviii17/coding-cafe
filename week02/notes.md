@@ -1,0 +1,16 @@
+1. It prints the absolute path of my current working directory, showing me exactly where I am in the file system hierarchy.
+2. The ls -a (all) command reveals hidden files and directories which always start with a period. Plain ls hides these by default to keep the view clean.
+3. The first column (drwxr-xr-x) represents the file type and access permissions.
+4. coding-cafe/week02 is a relative path because it works from where I am standing as the system looks for the folder coding-cafe inside my current working directory, rather than starting from the system root directory.
+5. In the first case, mv physically moved a file to a new location, out of m current directory and placed it in week01/ witout altering its name, whereas, in the second case, it simply renamed the file. In this step, since old-readme.md was a new name and not an existing directory, mv kept the file in the exact same spot (week01/) but changed its name.Would
+6. There are 12 folders.
+7. /Library/Frameworks/Python.framework/Versions/3.14/bin/python3
+8. My Python lives in a different place than my lab partner's because I downloaded different installers, used different tools and most importantly, we have different operating systems.
+9. The shell relies entirely on the PATH variable to find programs. When I type a command, the shell goes down my PATH checklist—looking through each of those 12 specific folders one by one—to see if a file named pyton3 exists inside any of them. Because of the typo, the shell checked every single folder on my PATH, found nothing by that name and finally gave up, telling me the command does not exist.
+10. A .venv folder does not appear with plain ls because file and directory names starting with a dot are hidden by default in Unix-like operating systems like Linux and MacOS. l -a is used to list all files, including hidden ones.
+11. The terminal prompt now has (.venv) prepended to the very beginning of the text line. This modifies my shell configuration temporarily to show me which environment is currently active, further showing that isolated Python (.venv) is being used.
+12. The path from question 7 (/Library/Frameworks/Python.framework/Versions/3.14/bin/python3) points to the global system Python installation on macOS. When I activate a virtual environment, my path changes to point to a local directory specific to that environment (env/bin/python3). The activate script prepends a new directory to the very beginning of your PATH variable and isolates my virtual environment, ensuring that any packages I install or run remain contained inside this specific virtual project, leaving my global system files untouched.
+13. The second list contains the requests package along with its required helper libraries, which the first does not.
+14. /Library/Frameworks/Python.framework/Versions/3.14/bin/python3
+15. The ls -h command displays file sizes in a human-readable format.
+16. Ctrl + C interrupts a running process, while Ctrl + D signals the end of input. When I am inside the interactive python3 terminal, these two keyboard shortcuts interact with the operating system and the Python interpreter in fundamentally different ways.

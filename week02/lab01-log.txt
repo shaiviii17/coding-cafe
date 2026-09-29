@@ -1,0 +1,18 @@
+  161  cd desktop
+  162  cd coding-cafe
+  163  cd week02
+  164  ls -h
+  165  man man
+  166  cd cod
+  167  cd desktop
+  168  cd coding-cafe
+  169  cd week02
+  170  cd cod
+  171  history
+  172  python3
+  173  history > week02/lab01-log.txt
+  174  cd desktop
+  175  cd ~/Desktop
+  176  cd coding-cafe
+
+Sir, I do not know why the previous commands did not get registered here. But, this is what I could retrieve.
