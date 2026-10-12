@@ -1,43 +1,81 @@
-Coding Café- Lab 4 Answers
+# Lab 4: Git & GitHub
 
-Question 1
-The `--global` option saves my Git name and email for all repositories belonging to my user account. Without it, the settings apply only to the current repository if I run the command inside one.
+## Question 1
 
-Question 2
-The `.git` directory appeared when I ran `ls -a`. It stores Git's internal information, including commit history, configuration and references to branches. It should not be deleted.
+The `--global` option saves the setting for my user account, so it applies to all the Git repositories I use unless I change it for a particular repository. Without `--global`, the setting applies only to the current repository if I am inside one.
 
-Question 3
-In my correct `coding-cafe` folder, Git initially showed two untracked files: `Untitled.rtf` and `notes.md`, along with a modified `.DS_Store` file. The untracked files were not yet part of the repository's committed history.
+## Question 2
 
-Question 4
-After creating `.gitignore`, the ignore rules were added to the project. Files matching those rules, such as `.DS_Store`, are ignored if they are not already tracked by Git.
+The `ls -a` command shows all the files and folders, including hidden ones that normally do not appear with `ls`. I could see the `.git` directory, which stores information about my repository and its history.
 
-Question 5
-The `.gitignore` file should be committed, not ignored. It tells Git which unnecessary files to leave out, helping everyone working on the project follow the same rules.
+## Question 3
 
-Question 6
-After running `git add README.md`, the README moved from the untracked section to the staged changes section. This means it moved from the working directory into the staging area, ready to be included in a commit.
+When I ran git status, Git showed the current state of my coding-cafe repository. It was on the main branch. The file lab4/notes.md was modified, while README.md, lab4/.gitignore, and lab4/lab4/ were untracked. Nothing had been staged yet.
 
-Question 7
-After running `git commit`, Git displayed the commit summary, including the commit message and the number of files changed. My commit reported **[enter the actual number of files changed shown in your terminal]** files changed.
+git status
+On branch master
 
-Question 8
-The first seven characters of a commit's hash form its short commit ID. For example, my existing commit has the short ID `4b4b578`. This ID helps me identify and refer to a specific commit without typing its entire hash.
+No commits yet
 
-Question 9
-The four steps of the Git workflow are edit, stage, commit, and repeat. I edit files, use `git add` to stage the changes, use `git commit` to save a snapshot, and repeat the process when I make further changes.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+    .venv/
+    Readme.md
+    week02/
+    week04/
 
-Question 10
-`README.md` is a standard name recognized by GitHub and many other code-hosting platforms. GitHub displays it prominently on the repository's front page, so visitors can quickly understand the project's purpose and contents.
+nothing added to commit but untracked files present (use "git add" to track)
 
-Question 11
-The `gh auth login` command authenticates the GitHub CLI with my GitHub account. It stores authentication credentials so GitHub CLI and Git can authenticate future operations without asking me to enter my account password for every push.
 
-Question 12
-The `README.md` file appears on the GitHub repository's front page as formatted text. GitHub automatically renders Markdown in README files to make the project description and contents easier to read.
 
-Question 13
-Pushing does not change my local commit history. It uploads my existing commits to GitHub, creating an online copy of the history already stored on my computer.
+## Question 4
 
-Question 14
-A private repository exists on GitHub but is visible only to its owner and people or teams granted access. A repository that does not exist on GitHub has no online repository page or hosted history for collaborators to access.
+After I created the `.gitignore` file, Git stopped showing the `.venv/` folder as untracked. This is because I added rules to ignore unnecessary files and folders like `.venv/`, `__pycache__/`, `*.pyc`, and `.DS_Store`.
+
+## Question 5
+
+Yes, I should commit the `.gitignore` file because it tells Git which files and folders to ignore. This also helps other people working on the same repository follow the same rules. I should not ignore the `.gitignore` file itself.
+
+## Question 6
+
+After I ran `git add README.md`, the file moved from the untracked files section to the changes to be committed section in `git status`. This means Git added the file to the staging area, where it was ready to be included in my next commit.
+
+## Question 7
+
+The command git commit -m "Lab work so far" saves staged changes as a commit with the specified message. My existing latest commit is 82793e5, with the message Lab work so far. I can use git log --oneline to view the commit history.
+
+git log --oneline
+commit fcd8529e50c9036fb985ced027b3ca8246ddab49 (HEAD -> master)
+Author: Shaivi Kumar <shaivikumar2007@gmail.com>
+Date:   Mon Oct 11 15:35:02 2026 +0530
+
+    Lab work so far
+fcd8096 (HEAD -> master) Lab work so far
+
+## Question 8
+
+The first seven characters of a commit hash are an abbreviated version of the full commit ID. They make it easier to refer to a commit without typing out the entire hash, as long as the shorter version uniquely identifies it.
+
+## Question 9
+
+The four steps are edit, stage, commit, and repeat. First, I make changes to my files, then use `git add` to stage the changes. After that, I use `git commit` to save them in the repository's history and repeat the process whenever I make more changes.
+
+## Question 10
+
+`README.md` is used to explain what a project is about and what it contains. GitHub automatically displays this file on the repository's front page, so people can understand the project without having to open every file.
+
+## Question 11
+
+The `gh auth login` command logged me into GitHub through the GitHub CLI. It set up authentication so I could interact with my GitHub account and push my local commits to my online repository without entering my account password every time.
+
+## Question 12
+
+When I opened my repository on GitHub, I could see the `README.md` file displayed as formatted text. GitHub automatically recognises the filename and renders the Markdown, making the project description easier to read.
+
+## Question 13
+
+No, pushing did not change my local commit history. The `git push` command uploaded my existing commits to the remote repository on GitHub. My local commits and their IDs stayed the same.
+
+## Question 14
+
+A private repository is stored on GitHub but can only be accessed by its owner and people who have been given permission. A repository that does not exist on GitHub has no online repository page or remote copy. Making a repository private restricts who can access it, but it does not delete the repository.
